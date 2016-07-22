@@ -1,0 +1,15 @@
+package com.tingo.core.dao;
+
+import org.omg.CORBA.Object;
+
+import java.util.List;
+
+/**
+ * Created by tengfei on 2016/7/22.
+ */
+public interface IDao<T> {
+    Integer insert(String statement, Object parameter);
+    Integer update(String statement, Object parameter);
+    T queryForObject(String statement,Object parameter);
+    List<T> query(String statement,Object parameter);
+}

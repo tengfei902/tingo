@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tingo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="tingo.war">
+      <element id="artifact" artifact-name="tingo:war exploded" />
+    </root>
+  </artifact>
+</component>

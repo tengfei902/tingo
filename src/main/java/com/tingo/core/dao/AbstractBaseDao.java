@@ -1,5 +1,6 @@
 package com.tingo.core.dao;
 
+import com.tingo.core.exception.TingoException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.omg.CORBA.Object;
@@ -17,24 +18,49 @@ public abstract class AbstractBaseDao implements IDao {
     public Integer insert(String statement, Object parameter) {
         SqlSession session = getSessionFactory().openSession();
         try {
-
+            return session.insert(statement,parameter);
         } catch (Exception e) {
-
+            throw new TingoException(e.getMessage());
         } finally {
             session.close();
         }
-        return 1;
+    }
+
+    public Integer batchInsert(String statement,Object parameter) {
+        SqlSession session = getSessionFactory().openSession();
+        return 0;
     }
 
     public Integer update(String statement, Object parameter) {
-        return null;
+        SqlSession session = getSessionFactory().openSession();
+        try {
+            return session.update(statement,parameter);
+        } catch (Exception e) {
+            throw new TingoException(e.getMessage());
+        } finally {
+            session.close();
+        }
     }
 
     public Object queryForObject(String statement, Object parameter) {
-        return null;
+        SqlSession session = getSessionFactory().openSession();
+        try {
+            return session.selectOne(statement,parameter);
+        } catch (Exception e) {
+            throw new TingoException(e.getMessage());
+        } finally {
+            session.close();
+        }
     }
 
     public List query(String statement, Object parameter) {
-        return null;
+        SqlSession session = getSessionFactory().openSession();
+        try {
+            return session.selectList(statement,parameter);
+        } catch (Exception e) {
+            throw new TingoException(e.getMessage());
+        } finally {
+            session.close();
+        }
     }
 }

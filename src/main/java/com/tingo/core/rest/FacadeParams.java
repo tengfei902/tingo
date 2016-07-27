@@ -24,6 +24,6 @@ public class FacadeParams {
     }
 
     public MultivaluedMapImpl getQueryParams() {
-        return queryParams;
+        return  queryParams;
     }
 }

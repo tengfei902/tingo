@@ -6,6 +6,7 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.net.ssl.SSLContext;
 
@@ -67,7 +68,7 @@ public class JerseyService implements JerseyServiceInstance {
             connectionRequestTimeoutInt = Integer.parseInt(connectionRequestTimeout);
         }
 
-        SSLContext sslContext;
-        client = new Client(new ApacheHttpClient4Handler())
+
+        client = new Client(new )
     }
 }

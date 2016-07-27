@@ -39,7 +39,11 @@ public abstract class BaseFacade {
     }
 
     public <T> T post(FacadeParams param,Type type) {
-
+        try {
+            return GSONHelper.convert(postClientResponse(param),type);
+        } catch (Exception e) {
+            throw new TingoException(e.getMessage());
+        }
     }
 
     private String getClientResponse(FacadeParams param) {

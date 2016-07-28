@@ -1,14 +1,10 @@
 package com.tingo.core.rest;
 
 import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
-import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.StringUtils;
-
-import javax.net.ssl.SSLContext;
 
 /**
  * Created by tengfei on 2016/7/25.
@@ -68,7 +64,6 @@ public class JerseyService implements JerseyServiceInstance {
             connectionRequestTimeoutInt = Integer.parseInt(connectionRequestTimeout);
         }
 
-
-        client = new Client(new )
+        client = Client.create(clientConfig);
     }
 }

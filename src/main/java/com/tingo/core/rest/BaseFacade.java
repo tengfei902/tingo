@@ -11,7 +11,9 @@ import java.lang.reflect.Type;
  * Created by tengfei on 2016/7/25.
  */
 public abstract class BaseFacade {
+
     protected abstract JerseyService getJerseyService();
+
     public <T> T get(FacadeParams param,Class<T> clazz) {
         try {
             return GSONHelper.convert(getClientResponse(param),clazz);

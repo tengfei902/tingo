@@ -16,7 +16,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration("classpath:spring-mvc.xml")
+@ContextConfiguration(locations = {"classpath:applicationContext.xml","classpath:dbconfig/DataSourceConfig.xml"})
 public class BaseAppTest {
     private MockMvc mockMvc;
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DebtSale">
+    
+    <sql id="debtSaleColumns">
+        id as "id",
+        user_id as "userId",
+        bo_id as "boId",
+        va_id as "vaId",
+        transfer_num as "transferNum",
+        price as "price",
+        one_price as "onePrice"
+    </sql>
+
+    <select id="queryDebtSaleById" parameterType="java.util.HashMap" resultType="com.tingo.weaver.dto.DebtSaleDTO">
+        SELECT
+        <include refid="debtSaleColumns"/>
+         FROM debt_sale WHERE id = #{id}
+    </select>
+</mapper>

@@ -1,7 +1,4 @@
 package com.tingo.core.dao;
-
-import org.omg.CORBA.Object;
-
 import java.util.List;
 
 /**

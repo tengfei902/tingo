@@ -3,7 +3,6 @@ package com.tingo.core.dao;
 import com.tingo.core.exception.TingoException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.omg.CORBA.Object;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 
@@ -11,7 +10,7 @@ import java.util.List;
  * Created by tengfei on 2016/7/22.
  */
 @Repository
-public abstract class AbstractBaseDao implements IDao {
+public abstract class AbstractBaseDao<T> implements IDao<T> {
 
     protected abstract SqlSessionFactory getSessionFactory();
 
@@ -42,7 +41,7 @@ public abstract class AbstractBaseDao implements IDao {
         }
     }
 
-    public Object queryForObject(String statement, Object parameter) {
+    public T queryForObject(String statement, Object parameter) {
         SqlSession session = getSessionFactory().openSession();
         try {
             return session.selectOne(statement,parameter);
@@ -53,7 +52,7 @@ public abstract class AbstractBaseDao implements IDao {
         }
     }
 
-    public List query(String statement, Object parameter) {
+    public List<T> query(String statement, Object parameter) {
         SqlSession session = getSessionFactory().openSession();
         try {
             return session.selectList(statement,parameter);

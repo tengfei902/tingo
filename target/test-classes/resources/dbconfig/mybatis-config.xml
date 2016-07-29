@@ -5,7 +5,7 @@
 <configuration>
     <!-- 命名空间 -->
     <typeAliases>
-
+        <typeAlias alias="DebtSale" type="com.tingo.weaver.dto.DebtSaleDTO"/>
     </typeAliases>
 
     <typeHandlers>

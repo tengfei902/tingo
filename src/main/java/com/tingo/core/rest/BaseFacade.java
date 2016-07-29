@@ -4,12 +4,16 @@ import com.google.gson.Gson;
 import com.sun.jersey.api.client.ClientResponse;
 import com.tingo.core.exception.TingoException;
 import com.tingo.core.utils.GSONHelper;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Type;
 
 /**
  * Created by tengfei on 2016/7/25.
  */
+@Repository
 public abstract class BaseFacade {
 
     protected abstract JerseyService getJerseyService();

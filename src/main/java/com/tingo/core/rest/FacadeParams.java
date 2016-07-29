@@ -26,4 +26,24 @@ public class FacadeParams {
     public MultivaluedMapImpl getQueryParams() {
         return  queryParams;
     }
+
+    public FacadeParams withUri(String uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    public FacadeParams withUser(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    public FacadeParams buildForm(String param, Object value) {
+        form.add(param,value);
+        return this;
+    }
+
+    public FacadeParams buildQueryParam(String param, Object value) {
+        queryParams.add(param,value);
+        return this;
+    }
 }

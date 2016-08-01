@@ -23,7 +23,7 @@ public class DemoRemoteService extends BaseFacade {
     }
 
     public String getDemoResult(String param) {
-        FacadeParams params = new FacadeParams().withUri("/service/demo/test").buildQueryParam("test",param);
+        FacadeParams params = new FacadeParams().withUri("/service/demo/test").buildQueryParam("param",param);
         return super.get(params,String.class);
     }
 }

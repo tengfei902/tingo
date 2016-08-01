@@ -1,14 +1,14 @@
 package com.tingo.weaver.resource;
 
 import com.sun.jersey.api.core.InjectParam;
+import com.tingo.core.utils.GSONHelper;
+import com.tingo.weaver.dto.DebtSaleDTO;
 import com.tingo.weaver.jersey.DemoRemoteService;
 import com.tingo.weaver.service.DemoService;
 
 import javax.annotation.Resource;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 
 /**
  * Created by tengfei on 2016/7/29.
@@ -32,5 +32,15 @@ public class DemoResource {
     @Produces("application/json")
     public String testGet() {
         return demoService.getDemoResult();
+    }
+
+    @POST
+    @Path("/testPost")
+    public String testPost(@FormParam("debtSaleId")String debtSaleId) {
+        DebtSaleDTO debtSaleDTO = demoService.findSaleDto(Long.parseLong(debtSaleId));
+        if(null == debtSaleDTO) {
+            return "DebtSale not found";
+        }
+        return GSONHelper.toJson(debtSaleDTO);
     }
 }

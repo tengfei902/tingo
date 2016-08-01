@@ -1,6 +1,8 @@
 package com.tingo.core.utils;
 
 import java.lang.reflect.Type;
+
+import com.alibaba.druid.util.StringUtils;
 import com.google.gson.Gson;
 
 /**
@@ -19,5 +21,12 @@ public class GSONHelper {
 
     public static <T> T convert(String str, Type type) {
         return null;
+    }
+
+    public static String toJson(Object obj) {
+        if(null == obj) {
+            return "";
+        }
+        return new Gson().toJson(obj);
     }
 }

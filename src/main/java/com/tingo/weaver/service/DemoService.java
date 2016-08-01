@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by tengfei on 2016/7/29.
  */
-@Service("demoService")
+@Service
 public class DemoService {
     @Autowired
     private DemoRemoteService demoRemoteService;

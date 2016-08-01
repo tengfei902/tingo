@@ -13,7 +13,6 @@ import java.lang.reflect.Type;
 /**
  * Created by tengfei on 2016/7/25.
  */
-@Repository
 public abstract class BaseFacade {
 
     protected abstract JerseyService getJerseyService();

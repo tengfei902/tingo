@@ -3,8 +3,8 @@ package com.tingo.weaver.resource;
 import com.sun.jersey.api.core.InjectParam;
 import com.tingo.weaver.jersey.DemoRemoteService;
 import com.tingo.weaver.service.DemoService;
-import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;

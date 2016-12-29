@@ -1,7 +1,6 @@
 package tingo.core.nio2;
 
 import java.nio.file.*;
-import java.util.Iterator;
 
 /**
  * Created by tengfei on 2016/12/28.

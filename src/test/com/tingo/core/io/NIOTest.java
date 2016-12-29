@@ -20,7 +20,7 @@ public class NIOTest {
             acceptorSvr.socket().bind(new InetSocketAddress(InetAddress.getByName("IP"),8080));
             acceptorSvr.configureBlocking(false);
             Selector selector = Selector.open();
-            SelectionKey key = acceptorSvr.register(selector,SelectionKey.OP_ACCEPT,ioHandler);
+//            SelectionKey key = acceptorSvr.register(selector,SelectionKey.OP_ACCEPT,ioHandler);
             int num = selector.select();
             Set selectedKeys = selector.selectedKeys();
             Iterator it = selectedKeys.iterator();

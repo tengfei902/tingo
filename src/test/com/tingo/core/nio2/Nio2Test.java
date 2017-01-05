@@ -32,7 +32,8 @@ public class Nio2Test {
     }
 
     public void testWatch() {
-
+        Path path = Paths.get("");
+        path.register(,)
     }
 
     public void testMetadata() throws Exception {
@@ -127,4 +128,13 @@ public class Nio2Test {
 
         Files.readAllBytes(newFile);
     }
+
+    public void testFileVisitor() throws Exception{
+        Path path = Paths.get("");
+        Files.walkFileTree(path,new ListTree());
+    }
+}
+
+class ListTree extends SimpleFileVisitor<Path> {
+
 }

@@ -33,7 +33,8 @@ public class RBTree<T extends Comparable<T>> {
 
     public T addNode(T value) {
         RBTreeNode<T> t = new RBTreeNode<T>(value);
-        return addNode(t);
+//        return addNode(t);
+        return null;
     }
 
     public T find(T value) {
@@ -65,12 +66,13 @@ public class RBTree<T extends Comparable<T>> {
                 dataRoot = dataRoot.getLeft();
             } else {
                 if(dataRoot.getRight()!=null) {
-                    RBTreeNode<T> min = removeMin(dataRoot.getRight());
-                    RBTreeNode<T> x = min.getRight()==null?min.getParent():min.getRight();
-                    boolean isParent = min.getRight()==null;
+                    //RBTreeNode<T> min = removeMin(dataRoot.getRight());
+                    //RBTreeNode<T> x = min.getRight()==null?min.getParent():min.getRight();
+                    //boolean isParent = min.getRight()==null;
 
                 }
             }
         }
+        return null;
     }
 }

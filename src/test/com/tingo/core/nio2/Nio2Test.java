@@ -33,7 +33,6 @@ public class Nio2Test {
 
     public void testWatch() {
         Path path = Paths.get("");
-        path.register(,)
     }
 
     public void testMetadata() throws Exception {

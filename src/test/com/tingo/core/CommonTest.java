@@ -16,8 +16,9 @@ public class CommonTest {
         BigDecimal b2 = new BigDecimal(2.20);
         BigDecimal b3 =  b1.subtract(b2);
         System.out.println(b3);
-
         BigDecimal b4 = b1.add(b2);
         System.out.println(b4);
     }
+
+
 }

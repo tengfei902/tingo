@@ -28,4 +28,16 @@ public class VolatileTest {
 
         System.out.println(count);
     }
+
+    @Test
+    public void testWait() {
+        System.out.println("000-------");
+        try {
+            this.wait(10000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("00000000000");
+
+    }
 }
